@@ -1,17 +1,13 @@
-require "rails_helper"
+etrequire 'rails_helper'
 
 RSpec.describe Api::V1::CategoriesController, type: :controller do
-
-  let(:pets) do
-    [
-      attributes_for(:pet, name: "Palomas", status: :available),
-      attributes_for(:pet, name: "Patos", status: :available)
-    ]
+  before do
+    @category = create :catgory
   end
-
+  
   let(:valid_attributes) do
     {
-      name: "Aves",
+      name: "Perros",
       pets_attributes: pets
     }
   end
@@ -66,50 +62,6 @@ RSpec.describe Api::V1::CategoriesController, type: :controller do
         expect(response.content_type).to eq('application/json; charset=utf-8')
       end
     end
-	end
-	
-	describe "PUT #update" do
-    context "with valid params" do
-      let(:new_attributes) do
-        {
-          name: "Voladores"
-        }
-      end
-
-      it "updates the requested category" do
-        category = Category.create! valid_attributes
-        put :update, params: {id: category.to_param, category: new_attributes}
-        category.reload
-        expect(category.name).to eq "Voladores"
-      end
-
-      it "renders a JSON response with the category" do
-        category = Category.create! valid_attributes
-
-        put :update, params: {id: category.to_param, category: valid_attributes}
-        expect(response).to have_http_status(:ok)
-        expect(response.content_type).to eq('application/json; charset=utf-8')
-      end
-    end
-
-    context "with invalid params" do
-      it "renders a JSON response with errors for the category" do
-        category = Category.create! valid_attributes
-
-        put :update, params: {id: category.to_param, category: invalid_attributes}
-        expect(response).to have_http_status(:unprocessable_entity)
-        expect(response.content_type).to eq('application/json; charset=utf-8')
-      end
-    end
   end
-
-  describe "DELETE #destroy" do
-    it "destroys the requested category" do
-      category = Category.create! valid_attributes
-      expect {
-        delete :destroy, params: {id: category.to_param}
-      }.to change(Category, :count).by(-1)
-    end
-  end
-
+e
 end

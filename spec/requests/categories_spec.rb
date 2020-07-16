@@ -18,11 +18,11 @@ RSpec.describe "Categories", type: :request do
 
   describe "POST api/v1/categories", :type => :request do
     before do
-      post '/api/v1/categories', params: { category: { name: 'Perros' }}
+      post '/api/v1/categories', params: { category: { name: 'Aves' }}
     end
 
     it 'returns the catgeory name' do
-      expect(JSON.parse(response.body)['name']).to eq('Perros')
+      expect(JSON.parse(response.body)['name']).to eq('Aves')
     end
 
     it 'returns a created status' do

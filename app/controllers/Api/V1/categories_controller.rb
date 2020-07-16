@@ -41,7 +41,7 @@ module Api
       end
 
       def category_params
-        params.require(:category).permit(:name)
+        params.require(:category).permit(:name, pets_attributes: %i[id name status _destroy])
       end
     end
   end
