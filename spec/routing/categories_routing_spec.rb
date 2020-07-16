@@ -22,7 +22,7 @@ RSpec.describe Api::V1::CategoriesController, type: :routing do
       expect(patch: "/api/v1/categories/1").to route_to("api/v1/categories#update", id: "1")
     end
 
-    it "routes to #delete" do
+    it "routes to #delete via DELETE" do
       expect(delete: "/api/v1/categories/1").to route_to("api/v1/categories#destroy", id: "1")
     end
   end
