@@ -5,7 +5,8 @@ module Api
 
       # GET /pets
       def index
-        @pets = Pet.all
+        limit = params[:limit].present? ? params[:limit] : 100  
+        @pets = Pet.all.limit(limit)
 
         render json: @pets
       end
