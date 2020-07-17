@@ -66,29 +66,42 @@ rake
 
 # Api documentation
 
-  ## Petstore API
-  This collection contains sample requests from this [API](https://petstoreapi.herokuapp.com/api/v1/)
+## Petstore API
+This collection contains sample requests from this [API](https://petstoreapi.herokuapp.com/api/v1/)
 
-  It contains the following requests
+It contains the following requests
 
-  ##### Categories
-  * Create a new category
-  * Get categories list
-  * Get details of a category and pets relationed
-  * Update a category data
-  * Destroy a category
+##### Categories
+* Create a new category
+* Get categories list
+* Get details of a category and pets relationed
+* Update a category data
+* Destroy a category
 
-  ##### Pets
-  * Create a new pet
-  * Get pets list
-  * Get details of a pet
-  * Update a pet data
-  * Destroy a pet
+##### Pets
+* Create a new pet
+* Get pets list
+* Get details of a pet
+* Update a pet data
+* Destroy a pet
 
-  basePath: `https://petstoreapi.herokuapp.com/api/v1/`
+basePath: `https://petstoreapi.herokuapp.com/api/v1/`
 
-  paths:
+#### Paths:
 
-	> get: '/categories'
+```
+get: '/categories'
+description: return all categories listing	
+```
 
-	> description: return all categories listing	
+```
+post: '/categories'
+query: 
+	[
+		{
+			"key": "category[name]",
+			"value": "Aves"
+		}
+	]
+description: return a cetgory created	
+```
