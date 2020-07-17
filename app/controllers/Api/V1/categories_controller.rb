@@ -9,7 +9,7 @@ module Api
       end
 
       def show
-        render json: @category
+        render json: @category, show_pets: true
       end
 
       def create

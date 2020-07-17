@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :pet do
-    name { "MyString" }
+  	sequence(:name){ |n| "Pet#{n}" }
     status { "available" }
     category
   end
