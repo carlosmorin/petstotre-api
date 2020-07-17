@@ -86,3 +86,10 @@ rake
   * Destroy a pet
 
   basePath: `https://petstoreapi.herokuapp.com/api/v1/`
+
+  paths:
+
+  ```
+  	get: '/categories'
+  	> description: return all categories listing	
+  ```
