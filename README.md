@@ -41,3 +41,5 @@ rails db:seed
 rails server
 
 ```
+
+# Api documentation
