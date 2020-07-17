@@ -51,7 +51,7 @@ module Api
       end
 
       def pet_params
-        params.require(:pet).permit(:name, :status, :category_id)
+        params.require(:pet).permit(:name, :tag, :status, :category_id)
       end
     end
   end

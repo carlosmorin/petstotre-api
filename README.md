@@ -1,10 +1,12 @@
 # Project
 
-[How to prepare my work environment?](https://gorails.com/setup/ubuntu/16.04)
+[API](https://petstoreapi.herokuapp.com/api/v1/)
+
 
 ## Install project
-#### Clone the repository
+[How to prepare my work environment?](https://gorails.com/setup/ubuntu/16.04)
 
+#### Clone the repository
 ```
 git clone git@github.com:carlosmorin/petstotre-api.git
 cd petstotre-api
