@@ -1,13 +1,16 @@
+# frozen_string_literal: true
+
 module Api
   module V1
+    # Pets Controller
     class PetsController < ApplicationController
-      before_action :set_pet, only: [:show, :update, :destroy]
+      before_action :set_pet, only: %i[show update destroy]
 
       # GET /pets
       def index
-        limit = params[:limit].present? ? params[:limit] : 100  
+        limit = params[:limit].present? ? params[:limit] : 100
         @pets = Pet.all.limit(limit)
-
+        filter_by_category if params[:category].present?
         render json: @pets
       end
 
@@ -42,15 +45,14 @@ module Api
       end
 
       private
-        # Use callbacks to share common setup or constraints between actions.
-        def set_pet
-          @pet = Pet.find(params[:id])
-        end
 
-        # Only allow a trusted parameter "white list" through.
-        def pet_params
-          params.require(:pet).permit(:name, :status, :category_id)
-        end
+      def set_pet
+        @pet = Pet.find(params[:id])
+      end
+
+      def pet_params
+        params.require(:pet).permit(:name, :status, :category_id)
+      end
     end
   end
 end

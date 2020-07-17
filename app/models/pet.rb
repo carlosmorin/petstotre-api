@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Pet model
 class Pet < ApplicationRecord
   belongs_to :category
 
