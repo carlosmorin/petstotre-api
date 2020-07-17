@@ -1,14 +1,16 @@
 # Project
 
-## Install
-### Clone the repository
+[How to prepare my work environment?](https://gorails.com/setup/ubuntu/16.04)
+
+## Install project
+#### Clone the repository
 
 ```
 git clone git@github.com:carlosmorin/petstotre-api.git
 cd petstotre-api
 ```
 
-### Clone the repository
+#### Check your Ruby version
 ```
 ruby -v
 ```
@@ -19,23 +21,23 @@ If not, install the right ruby version using [rbenv](https://github.com/rbenv/rb
 rbenv install 2.7.0
 ```
 
-### Install dependences (Gems)
+#### Install dependences (Gems)
 Using [Bundler](https://github.com/bundler/bundler)
 
 ```
 bundle install
 ```
 
-### Prepare database
+#### Prepare database
 ```
 rails db:create 
-db:migrate 
-db:seed
+rails db:migrate 
+rails db:seed
 ```
 
-### Run rails server
+#### Run rails server
 
 ```
-rails s
+rails server
 
 ```
