@@ -2,9 +2,20 @@
 
 [API](https://petstoreapi.herokuapp.com/api/v1/)
 
+#### Project specs
+> Ruby version `2.7.0`
+
+> Rails version `6.0.3`
+
+> Database manager `postgresql`
+
+> Testing framewrok `rspec`
+
+> Linter used `rubocop`
 
 ## Install project
 [How to prepare my work environment?](https://gorails.com/setup/ubuntu/16.04)
+
 
 #### Clone the repository
 ```
@@ -21,6 +32,8 @@ If not, install the right ruby version using [rbenv](https://github.com/rbenv/rb
 
 ```
 rbenv install 2.7.0
+rbenv global 2.7.0
+rbenv rehash 
 ```
 
 #### Install dependences (Gems)
@@ -41,6 +54,13 @@ rails db:seed
 
 ```
 rails server
+
+```
+
+#### Run tests suite
+
+```
+rake
 
 ```
 
