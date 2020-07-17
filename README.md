@@ -96,12 +96,40 @@ description: return all categories listing
 
 ```
 post: '/categories'
-query: 
-	[
-		{
-			"key": "category[name]",
-			"value": "Aves"
-		}
-	]
+query example: 
+[
+  {
+    "key": "category[name]",
+    "value": "Aves"
+  }
+]
+
 description: return a cetgory created	
+```
+
+```
+get: '/categories/:id'
+description: Return a specific category and pets relationed
+```
+
+```
+put: '/categories/:id'
+query example: 
+[
+  {
+    "key": "category[name]",
+    "value": "Aves2"
+  }
+]
+
+description: Update a category data
+```
+
+```
+delete: '/categories/:id'
+
+description: 
+API endpoint to *Delete* a category and pets relationed 
+* A successful request will result in a *204 No Content* status code
+* If that the resource does not exist reponse will be \"404 Not Found\" status codeUpdate a category data
 ```
