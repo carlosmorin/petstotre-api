@@ -89,13 +89,22 @@ basePath: `https://petstoreapi.herokuapp.com/api/v1/`
 
 #### Paths:
 
+#### Categories:
 ```
+Get categories list
+
 get: '/categories'
-description: return all categories listing	
+
+description: 
+Return all categories listing
+A successful request will result in a *200 OK* status code
 ```
 
 ```
+Create a category
+
 post: '/categories'
+
 query example: 
 [
   {
@@ -104,16 +113,26 @@ query example:
   }
 ]
 
-description: return a cetgory created	
+description: 
+Returns a category created
+A successful request will result in a *200 OK* status code
 ```
 
 ```
+Get a specific category
+
 get: '/categories/:id'
-description: Return a specific category and pets relationed
+
+description: 
+Return a specific category and pets relationed
+A successful request will result in a *200 OK* status code
 ```
 
 ```
+Update a category 
+
 put: '/categories/:id'
+
 query example: 
 [
   {
@@ -122,7 +141,9 @@ query example:
   }
 ]
 
-description: Update a category data
+description: 
+Returns a category updated	
+A successful request will result in a *200 OK* status code
 ```
 
 ```
@@ -130,6 +151,90 @@ delete: '/categories/:id'
 
 description: 
 API endpoint to *Delete* a category and pets relationed 
+* A successful request will result in a *204 No Content* status code
+* If that the resource does not exist reponse will be \"404 Not Found\" status codeUpdate a category data
+```
+
+
+
+
+#### Pets:
+```
+Get pets list
+
+get: '/pets'
+
+description: 
+Return all categories listing	
+A successful request will result in a *200 OK* status code
+
+params 'limit'
+description: 
+Get a pets list with limit items specified, max 100
+```
+
+```
+Create a pet
+
+post: '/pets'
+
+"query": [
+  {
+    "key": "pet[name]",
+    "value": "Pastor Aleman"
+  },
+  {
+    "key": "pet[tag]",
+    "value": "Tamaño Grande"
+  },
+  {
+    "key": "pet[status]",
+    "value": "available"
+  },
+  {
+    "key": "pet[category_id]",
+    "value": "1"
+  }
+]
+
+description: 
+Return a pet created	
+A successful request will result in a *201 Created* status code
+```
+
+```
+Get a specific pet
+
+get: '/pets/:id'
+
+description: 
+Return a specific pet and category relationed
+A successful request will result in a *200 OK* status code
+```
+
+```
+Update a pet 
+
+put: '/pets/:id'
+
+query example: 
+[
+  {
+    "key": "pet[name]",
+    "value": "Bulldog Ingles"
+  }
+]
+
+description: 
+Return a pet updated
+A successful request will result in a *200 OK* status code
+```
+
+```
+delete: '/pets/:id'
+
+description: 
+API endpoint to *Delete* a pet
 * A successful request will result in a *204 No Content* status code
 * If that the resource does not exist reponse will be \"404 Not Found\" status codeUpdate a category data
 ```
