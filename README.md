@@ -89,7 +89,6 @@ rake
 
   paths:
 
-  ```
-  	get: '/categories'
-  	> description: return all categories listing	
-  ```
+	> get: '/categories'
+
+	> description: return all categories listing	
