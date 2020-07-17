@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2020_07_16_044211) do
 
   create_table "pets", force: :cascade do |t|
     t.string "name"
+    t.string "tag"
     t.integer "status"
     t.bigint "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
